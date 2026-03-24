@@ -1,11 +1,13 @@
 package za.ac.cput.domain;
 
+import java.time.LocalDate;
+
 public class Booking {
 
     private String bookingId;
-    private String bookingDate;
-    private String startDate;
-    private String endDate;
+    private LocalDate bookingDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private BookingStatus bookingStatus;
 
     public Booking() {
@@ -23,40 +25,20 @@ public class Booking {
         return bookingId;
     }
 
-    public String getBookingDate() {
+    public LocalDate getBookingDate() {
         return bookingDate;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public String getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
     public BookingStatus getBookingStatus() {
         return bookingStatus;
-    }
-
-    public void setBookingId(String bookingId) {
-        this.bookingId = bookingId;
-    }
-
-    public void setBookingDate(String bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-
-    public void setBookingStatus(BookingStatus bookingStatus) {
-        this.bookingStatus = bookingStatus;
     }
 
     @Override
@@ -72,9 +54,9 @@ public class Booking {
 
     public static class Builder {
         private String bookingId;
-        private String bookingDate;
-        private String startDate;
-        private String endDate;
+        private LocalDate bookingDate;
+        private LocalDate startDate;
+        private LocalDate endDate;
         private BookingStatus bookingStatus;
 
         public Booking.Builder setBookingId(String bookingId) {
@@ -82,23 +64,31 @@ public class Booking {
             return this;
         }
 
-        public Booking.Builder setBookingDate(String bookingDate) {
+        public Booking.Builder setBookingDate(LocalDate bookingDate) {
             this.bookingDate = bookingDate;
             return this;
         }
 
-        public Booking.Builder setStartDate(String startDate) {
+        public Booking.Builder setStartDate(LocalDate startDate) {
             this.startDate = startDate;
             return this;
         }
 
-        public Booking.Builder setEndDate(String endDate) {
+        public Booking.Builder setEndDate(LocalDate endDate) {
             this.endDate = endDate;
             return this;
         }
 
         public Booking.Builder setBookingStatus(BookingStatus bookingStatus) {
             this.bookingStatus = bookingStatus;
+            return this;
+        }
+        public Builder copy(Booking booking) {
+            this.bookingId = booking.bookingId;
+            this.bookingDate = booking.bookingDate;
+            this.startDate = booking.startDate;
+            this.endDate = booking.endDate;
+            this.bookingStatus = booking.bookingStatus;
             return this;
         }
 

@@ -3,7 +3,7 @@ package za.ac.cput.domain;
 public class Accomodation {
     private String accomodationId;
     private String name;
-    private String gender;
+    private GenderType gender;
     private String contactNumber;
     private String location;
     private AccomodationStatus accomodationStatus;
@@ -14,7 +14,7 @@ public class Accomodation {
     public Accomodation(Builder builder) {
         this.accomodationId = builder.accomodationId;
         this.name = builder.name;
-        this.gender = builder.gender;
+        this.gender =builder.gender;
         this.contactNumber = builder.contactNumber;
         this.location = builder.location;
         this.accomodationStatus = builder.accomodationStatus;
@@ -29,8 +29,7 @@ public class Accomodation {
         return name;
     }
 
-    public String getGender() {
-
+    public GenderType getGender() {
         return gender;
     }
 
@@ -65,7 +64,7 @@ public class Accomodation {
 
         private String accomodationId;
         private String name;
-        private String gender;
+        private GenderType gender;
         private String contactNumber;
         private String location;
         private AccomodationStatus accomodationStatus;
@@ -80,7 +79,7 @@ public class Accomodation {
             return this;
         }
 
-        public Builder setGender(String gender) {
+        public Builder setGender(GenderType gender) {
             this.gender = gender;
             return this;
         }
