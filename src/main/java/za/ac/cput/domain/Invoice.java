@@ -1,14 +1,14 @@
 package za.ac.cput.domain;
 
 import java.time.LocalDate;
-import java.util.Objects;
+
 
 public class Invoice {
-    private String invoiceId; // Changed from int to String
+    private String invoiceId;
     private String studentDetails;
     private double totalAmount;
     private LocalDate date;
-    // private InvoiceStatus invoiceStatus; // Ensure this enum exists in your domain package
+
 
     private Invoice() {}
 
@@ -17,7 +17,7 @@ public class Invoice {
         this.studentDetails = builder.studentDetails;
         this.totalAmount = builder.totalAmount;
         this.date = builder.date;
-        // this.invoiceStatus = builder.invoiceStatus;
+
     }
 
     public String getInvoiceId() { return invoiceId; }
